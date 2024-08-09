@@ -19,5 +19,8 @@ Through the process of building this project I learned how to compile a model wi
 # Interactive Python program for real-time handwritten digit recognition
 As an addition to this project I implemented a Python program that integrates the trained CNN model to allow for real-time prediction. This program provides a graphical interface where the user can draw a digit on the screen and the model will predict which digit was drawn. This interactive feature not only makes the application more engaging but also demonstrates the practical side of building the model.
 
+# Future Plans
+In the next version of this project I want to further refine the user interface and enhance the drawing accuracy by incorporating additional preprocessing steps. I'd also like to expand the model's capabilities to recognize handwritten letters.
+
 # Conclusion
 This project has been an excellent learning experience. It allowed me to gain practical knowledge of machine learning basics and also boosted my confidence in tackling more complex ML tasks, which I am looking forward to doing very soon!

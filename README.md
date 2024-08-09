@@ -1,5 +1,5 @@
 ## Handwritten Digit Recognition with Convolutional Neural Networks
-![cover](https://github.com/user-attachments/assets/eaba4b8f-aeed-4c51-9eb9-ab2670335ff1)
+![cnn-cover](https://github.com/user-attachments/assets/d2056e55-19e5-40e8-8f1b-1091cae97bcb)
 
 # Motivation for the project
 This is my version of solving the MNIST Digit data set. As a complete beginner in the field of machine learning I decided that I should build one of the 'classics' for my first project: a handwritten digit recognizer. This project uses the MNIST dataset ( a well-known dataset of handwritten digits) to train a model that can accurately classify digits from 0 to 9. Through this project, I aimed to gain hands-on experience with ML concepts and learn how to implement them using Python and popular ML libraries.
@@ -14,10 +14,10 @@ On the other hand, **Convolutional Neural Networks** (CNNs) are designed specifi
 
 Given the advantages of CNNs for image data I decided to use one for this project. This decision allowed me to utilise the powerful feature extraction capabilities of convolutional layers and achieve higher accuracy in digit recognition.
 
-Through the process of building this project I learned how to compile a model with an appropriate optimiser and loss function, how to fit the model to the training data and how to evaluate its performance on test data. The final model achieved very high accuracy (98%). Finally, I visualised the results using a confusion matrix and sample predictions shown in a grid to understand the model's strengths and weaknesses.
+Through the process of building this project I learned how to compile a model with an appropriate optimiser and loss function, how to fit the model to the training data and how to evaluate its performance on test data. The final model achieved very high accuracy (above 98%). Finally, I visualised the results using a confusion matrix and sample predictions shown in a grid to understand the model's strengths and weaknesses.
 
-# Future addition
-In the next version of this project I plan to create a Python program (integrated with the trained CNN model to allow for real-time prediction) in which the user can draw a number on the screen and have the program guess which digit it is. This interactive feature will make the application more engaging and demonstrate the practical side of building the model.
+# Interactive Python program for real-time handwritten digit recognition
+As an addition to this project I implemented a Python program that integrates the trained CNN model to allow for real-time prediction. This program provides a graphical interface where the user can draw a digit on the screen and the model will predict which digit was drawn. This interactive feature not only makes the application more engaging but also demonstrates the practical side of building the model.
 
 # Conclusion
-This project has been an excellent learning experience. It allowed me to gain practical knowledge of machine learning basics, and also boosted my confidence in tackling more complex ML tasks in the future. I am excited about the addition I plan to make to this project, and am looking forward to exploring more advanced topics in ML and AI.
+This project has been an excellent learning experience. It allowed me to gain practical knowledge of machine learning basics and also boosted my confidence in tackling more complex ML tasks in the future which I am looking forward to doing very soon!

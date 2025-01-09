@@ -1,6 +1,13 @@
 ## Handwritten Digit Recognition with Convolutional Neural Networks
 ![cnn-cover](https://github.com/user-attachments/assets/d2056e55-19e5-40e8-8f1b-1091cae97bcb)
 
+# Update Jan 2025
+## **Version 1.1.**
+In this update:
+- **Improved user input recognition:** Added some adjustments to match the MNIST image pre-processing so that the software achieves better recognition of user-drawn digits.
+- **Error handling**: If no digit is drawn, an error message is shown instead of proceeding with attempting to recognise the digit.
+__________________________
+
 # Motivation for the project
 This is my version of solving the MNIST Digit data set. As a complete beginner in the field of machine learning I decided that I should build one of the 'classics' for my first project: a handwritten digit recognizer. This project uses the MNIST dataset ( a well-known dataset of handwritten digits) to train a model that can accurately classify digits from 0 to 9. Through this project, I aimed to gain hands-on experience with ML concepts and learn how to implement them using Python and popular ML libraries.
 

@@ -1,6 +1,6 @@
 import numpy as np
 import tkinter as tk
-from PIL import Image, ImageDraw, ImageOps
+from PIL import Image, ImageDraw, ImageOps, ImageFilter
 import tensorflow as tf
 from tkinter import messagebox
 
@@ -40,16 +40,35 @@ class DrawApp:
         self.draw = ImageDraw.Draw(self.image)
 
     def predict_digit(self):
-        # convert the image to a 28x28 image as expected by the CNN model
-        image = self.image.resize((28, 28))
-        image = ImageOps.invert(image)
-        image = np.array(image)
-        image = image.reshape(1, 28, 28, 1)
-        image = image.astype('float32')
-        image /= 255.0
+        # crop the image to the bounding box of the digit
+        image = self.image
+        bbox = ImageOps.invert(image).getbbox()  # find bounding box of the drawn content
+        if bbox:
+            image = image.crop(bbox)
+        else:
+            tk.messagebox.showinfo("Error", "No digit drawn!")
+            return
 
-        # predict the digit
-        prediction = model.predict([image])
+        # resize to 20x20 while keeping the aspect ratio
+        image = image.resize((20, 20), Image.Resampling.LANCZOS)
+
+        # create a new 28x28 image with the digit centered
+        new_image = Image.new("L", (28, 28), 255)  # start with white background
+        new_image.paste(image, (4, 4))  # paste the 20x20 image in the center
+
+        # invert colours for white digit on black background
+        new_image = ImageOps.invert(new_image)
+
+        # apply Gaussian blur to simulate MNIST-like smoothing
+        new_image = new_image.filter(ImageFilter.GaussianBlur(radius=1))
+
+        # normalise the image
+        image_array = np.array(new_image).astype('float32')
+        image_array = image_array / 255.0  # scale pixel values to [0, 1]
+        image_array = image_array.reshape(1, 28, 28, 1)
+
+        # predict the digit using the model
+        prediction = model.predict([image_array])
         digit = np.argmax(prediction)
 
         # display the prediction
